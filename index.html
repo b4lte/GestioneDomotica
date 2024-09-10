@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Domotica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans">
+    <header class="bg-blue-600 p-6 shadow-md">
+        <h1 class="text-3xl font-bold text-white text-center">Gestione Domotica</h1>
+    </header>
+
+    <main class="max-w-4xl mx-auto mt-10">
+        <!-- Sezione Stanza -->
+        <section id="stanza" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Aggiungi Stanza</h2>
+            <div class="mb-4">
+                <label for="nomeStanza" class="block text-sm font-medium">Nome della Stanza:</label>
+                <input type="text" id="nomeStanza" placeholder="Inserisci il nome della stanza" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <button id="aggiungiStanzaBtn" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Aggiungi Stanza</button>
+        </section>
+
+        <!-- Sezione Dispositivi -->
+        <section id="dispositivi" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Aggiungi Dispositivi</h2>
+
+            <div class="mb-4">
+                <label for="tipoDispositivo" class="block text-sm font-medium">Tipo di Dispositivo:</label>
+                <select id="tipoDispositivo" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <option value="luce">Luce</option>
+                    <option value="termostato">Termostato</option>
+                    <option value="tapparella">Tapparella</option>
+                </select>
+                
+            </div>
+
+            <div class="mb-4">
+                <label for="selezionaStanza1" class="block text-sm font-medium">Seleziona Stanza:</label>
+                <select id="selezionaStanza1" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="indirizzoIp" class="block text-sm font-medium">Indirizzo IP:</label>
+                <input type="text" id="indirizzoIp" placeholder="Inserisci l'indirizzo IP" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+            </div>
+
+            <button id="aggiungiDispositivoBtn" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">Aggiungi Dispositivo</button>
+        </section>
+
+        <!-- Sezione Controllo -->
+        <section id="controllo" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Controllo Dispositivi</h2>
+            <button id="attivaDispositiviBtn" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300 mr-4">Attiva tutti i dispositivi</button>
+            <button id="disattivaDispositiviBtn" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-300">Disattiva tutti i dispositivi</button>
+        </section>
+
+        <!-- Sezione Controllo Specifico -->
+        <section id="specifico" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Controllo Specifico</h2>
+
+            <div class="mb-4">
+                <label for="selezionaStanza3" class="block text-sm font-medium">Seleziona Stanza:</label>
+                <select id="selezionaStanza3" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </select>
+            </div>
+
+            <!-- <div class="mb-4">
+                <label for="tipoSpecDispositivo" class="block text-sm font-medium">Tipo di Dispositivo:</label>
+                <select id="tipoSpecDispositivo" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <option value="luce">Luce</option>
+                    <option value="termostato">Termostato</option>
+                    <option value="tapparella">Tapparella</option>
+                </select>
+            </div> -->
+
+            <div class="flex space-x-4 mb-4">
+                <button id="accendiSpecDispositivoBtn" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300">Accendi</button>
+                <button id="spegniSpecDispositivoBtn" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-300">Spegni</button>
+            </div>
+        </section>
+
+        <section id="specifico" class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-4">Gestione Risorse</h2>
+
+            <div class="mb-4">
+                <label for="selezionaStanza2" class="block text-sm font-medium">Seleziona Stanza:</label>
+                <select id="selezionaStanza2" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </select>
+            </div>
+
+            <!-- Imposta Intensità -->
+            <div class="mb-4">
+                <label for="intensitaLuce" class="block text-sm font-medium">Intensità Luce:</label>
+                <input type="number" id="intensitaLuce" placeholder="Imposta intensità (0-100)" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                <button id="impostaIntensitaLuceBtn" class="bg-blue-600 text-white px-4 py-2 rounded-lg mt-2 hover:bg-blue-700 transition duration-300">Imposta Intensità</button>
+            </div>
+
+            <!-- Imposta Temperatura -->
+            <div class="mb-4">
+                <label for="temperatura" class="block text-sm font-medium">Temperatura Termostato:</label>
+                <input type="number" id="temperatura" placeholder="Imposta temperatura (15-25)" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                <button id="impostaTemperaturaBtn" class="bg-blue-600 text-white px-4 py-2 rounded-lg mt-2 hover:bg-blue-700 transition duration-300">Imposta Temperatura</button>
+            </div>
+
+            <!-- Controllo Tapparella -->
+            <div class="mb-4">
+                <label for="temperatura" class="block text-sm font-medium">Gestisci Tapparelle:</label>
+                <button id="apriTapparellaBtn" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300">Apri Tapparella</button>
+                <button id="chiudiTapparellaBtn" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-300">Chiudi Tapparella</button>
+            </div>
+        </section>
+        
+        <!-- Sezione per visualizzare stanze e dispositivi -->
+        <section id="stanzeContainer">
+            <h2>Elenco Stanze e Dispositivi</h2>
+            <div id="listaStanze"></div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-4 mt-10 text-center">
+        <p>&copy; 2024 Gestione Domotica. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="./dist/index.js"></script>
+</body>
+</html>
